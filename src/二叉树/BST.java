@@ -111,4 +111,30 @@ public class BST<Key extends Comparable<Key>, Value> {
         x.N = size(x.left) + size(x.right) + 1;
         return x;
     }
+
+    // k:树中正好有k个小于它的键
+    public Key select(int k) {
+        return select(root, k).key;
+    }
+
+    private Node select(Node x, int k) {
+        if (x == null) return null;
+        int t = size(x.left);
+        if (t > k) return select(root.left, k);
+        else if (t < k) return select(root.right, k - t - 1);
+        else return x;
+    }
+
+    public int rank(Key key){
+        return rank(key,root);
+    }
+
+    // 返回以x为根结点的子树中小于x，key键的数量
+    private int rank(Key key,Node x){
+        if (x == null) return 0;
+        int cmp = key.compareTo(x.key);
+        if (cmp < 0) return rank(key,x.left);
+        else if(cmp > 0) return 1 + size(x.left) + rank(key,x.right);
+        else return size(x.left);
+    }
 }
