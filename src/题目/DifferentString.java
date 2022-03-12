@@ -24,6 +24,6 @@ public class DifferentString {
     public static void main(String[] args) {
         String initString = "abcdefga";
         boolean flag = checkDifferent(initString);
-        System.out.println(new DifferentString().checkDifferent(initString));
+        System.out.println(checkDifferent(initString));
     }
 }
