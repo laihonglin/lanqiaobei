@@ -1,5 +1,8 @@
 package 题目;
 
+/**
+ *  字符串压缩
+ */
 public class Zipper {
     public static String zipString(String src){
         int count = 0;
