@@ -1,5 +1,8 @@
 package 题目;
 
+/**
+ * 判断字符串是否有重复字符
+ */
 public class DifferentString {
     public static boolean checkDifferent(String initString) {
         if (initString == null) {
