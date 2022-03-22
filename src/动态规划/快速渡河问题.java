@@ -25,11 +25,12 @@ public class 快速渡河问题 {
                 speed[j] = sc.nextInt();
             }
             Arrays.sort(speed);
-            f(n, speed);
+            int res = f(n, speed);
+            System.out.println(res);
         }
     }
 
-    private static void f(int n, int[] speed) {
+    private static int f(int n, int[] speed) {
         int left = n;// 有多少人
         int ans = 0;// 记时间
         while (left > 0) {
@@ -48,6 +49,6 @@ public class 快速渡河问题 {
                 left -= 2;
             }
         }
-        System.out.println(ans);
+        return ans;
     }
 }
