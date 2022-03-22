@@ -42,6 +42,7 @@ public class 快速渡河问题 {
                 break;
             } else if (left == 3) {
                 ans += speed[2] + speed[0] + speed[1];
+                break;
             } else {
                 int s1 = speed[1] + speed[0] + speed[left - 1] + speed[1];
                 int s2 = speed[left - 1] + speed[left - 2] + 2 * speed[0];
