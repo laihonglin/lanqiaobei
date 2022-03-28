@@ -13,6 +13,8 @@ import java.util.Arrays;
  * 输入：s1 = "abcde", s2 = "ace"
  * 输出：3
  * 解释：最长公共子序列是 "ace" ，它的长度为 3 。
+ *
+ * 相关例题: LeetCode 712 两个字符串的最小ASCII删除和
  */
 public class 最长公共子序列 {
     static int[][] memo;
