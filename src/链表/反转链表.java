@@ -1,7 +1,5 @@
 package 链表;
 
-import java.util.Scanner;
-
 /**
  * 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
  * <p>
@@ -29,14 +27,19 @@ public class 反转链表 {
         insert(4);
         insert(5);
         ListNode cur = head.next;
-        while (cur != null){
-            System.out.print(cur.val + " ");
-            cur = cur.next;
-        }
-        System.out.println();
-        System.out.println("反转后:");
-        ListNode reverseNode = reverseList(head);
-        while (reverseNode != head) {
+//        while (cur != null){
+//            System.out.print(cur.val + " ");
+//            cur = cur.next;
+//        }
+//        System.out.println();
+//        System.out.println("反转后:");
+//        ListNode reverseNode = reverseList(head);
+//        while (reverseNode != head) {
+//            System.out.print(reverseNode.val + " ");
+//            reverseNode = reverseNode.next;
+//        }
+        ListNode reverseNode = reverseN(cur, 3);
+        while (reverseNode != null) {
             System.out.print(reverseNode.val + " ");
             reverseNode = reverseNode.next;
         }
@@ -69,5 +72,21 @@ public class 反转链表 {
             cur = next;
         }
         return pre;
+    }
+
+    /**
+     * 反转链表前n个结点
+     */
+    static ListNode successor = null;
+
+    private static ListNode reverseN(ListNode head, int n) {
+        if (n == 1) {
+            successor = head.next;
+            return head;
+        }
+        ListNode last = reverseN(head.next, n - 1);
+        head.next.next = head;
+        head.next = successor;
+        return last;
     }
 }
