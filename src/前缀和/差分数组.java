@@ -11,6 +11,8 @@ import java.util.Arrays;
  * 示例:
  * 输入: length = 5, updates = [[1,3,2],[2,4,3],[0,2,-2]]
  * 输出: [-2,0,3,5,3]
+ *
+ * 相关例题 LeetCode 1109 航班预订统计
  */
 public class 差分数组 {
     public static void main(String[] args) {
